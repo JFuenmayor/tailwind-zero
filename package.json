@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "tailwindcss -i src/styles.css -o public/output.css -w"
+    "build": "npx tailwindcss -i src/styles.css -o public/output.css -w"
   },
   "dependencies": {
     "tailwindcss": "^3.0.24"
