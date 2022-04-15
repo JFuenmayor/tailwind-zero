@@ -1,0 +1,16 @@
+{
+  "name": "tailwind-zero",
+  "version": "1.0.0",
+  "description": "tailwind project to learn first approach to tailwindcss",
+  "main": "index.js",
+  "repository": "https://github.com/JFuenmayor/tailwind-zero.git",
+  "author": "jfuenmayor <jorge.fuenmayort@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tailwindcss -i src/styles.css -o public/output.css -w"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}
