@@ -35,7 +35,11 @@ Create the following file where all the styles will be used
 
 ### **`src/styles.css`**
 
-**_NOTE:_** The **`tailwind.config.js`** file is created via command on console`npx tailwind init` and there you must specify the content route that is intended to work with tailwindcss.
+<br/>
+
+> **_Important:_** The **`tailwind.config.js`** file is created via command on console`npx tailwind init` and there you must specify the content route that is intended to work with tailwindcss.
+
+<br/>
 
 ## Utilities
 
@@ -69,3 +73,48 @@ while on html file is added the output styles and is ready to use API-Style tail
   </body>
 </html>
 ```
+
+<br/>
+
+## Breakpoints
+
+The key element to take into account is the flag before any tailwind element called out
+
+| Breakpoint   | Properties           |
+| ------------ | -------------------- |
+| none         | width: 100%;         |
+| sm (640px)   | `max-width: 640px;`  |
+| md (768px)   | `max-width: 768px;`  |
+| lg (1024px)  | `max-width: 1024px;` |
+| xl (1280px)  | `max-width: 1280px;` |
+| 2xl (1536px) | `max-width: 1536px;` |
+
+```html
+<div class="lg:container">Hi! i'm a container!</div>
+```
+
+> **_Note:_** The use of the prefix lg in this case means: _*If the viewport is 1280px or more, the following tailwind element will be applied*_
+
+As any other element from tailwindcss, containers are stated as default attributes [Tailwind Documentation](https://tailwindcss.com/docs/container).
+
+## Flex & Grid
+
+To make use of flex is appliable the class `flex`, and same logic applies with `grid`
+
+### Cheatsheet
+
+`gap` : Space between cols (applies both flex and grid)
+
+`flex-col` | `flex-row` | `flex-col-reverse` | `flex-row-reverse` : Flex direction
+
+`flex-wrap` | `flex-wrap-reverse` | `flex-nowrap` : Flex wrap
+
+`flex-initial` | `flex-1` : Flex size behavour
+
+`grid-cols-n` : Number of colums per row
+
+`col-span-n` : Size of cols used by grid child
+
+`col-start-n` | `col-end-n` : start and/or end at the nth grid lin
+
+> **_NOTE_** CSS grid lines start at 1, not 0, so a full-width element in a 6-column grid would start at line 1 and end at line 7.
