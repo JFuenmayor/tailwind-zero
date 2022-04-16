@@ -146,3 +146,23 @@ Applying pre-existing classes can be tedious to maintain and scalate among large
 ```
 
 And both scenarios will render the same css content
+
+## Conditional styling
+
+When creating a responsive design, due to the presets that tailwindcss brings, it is important to acknowledge that breakpoints are placed as media queries with min-width, what this implies is that elements intended to be placed on widths lesser than set scenario will not acomplish that style.
+
+### **`index.html`**
+
+```html
+<div class="sm:text-center">Text!</div>
+```
+
+In the above use case, only from (preset) sm min-width and after (md, lg, etc.) will be applied the `text-center` class, however elements before that (630px) will be styless.
+
+This behavour is set on purpose due to the _atomic design_. Thus, the ideal use is the following
+
+### **`index.html`**
+
+```html
+<div class="text-center sm:text-left">Text!</div>
+```
