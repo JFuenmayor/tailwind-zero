@@ -118,3 +118,31 @@ To make use of flex is appliable the class `flex`, and same logic applies with `
 `col-start-n` | `col-end-n` : start and/or end at the nth grid lin
 
 > **_NOTE_** CSS grid lines start at 1, not 0, so a full-width element in a 6-column grid would start at line 1 and end at line 7.
+
+## Utility-first API
+
+Applying pre-existing classes can be tedious to maintain and scalate among large applications, that is why is created the `@apply` directive as:
+
+### **`styles.css`**
+
+```css
+.btn {
+  @apply py-2 px-4 font-semibold;
+}
+.btn-green {
+  @apply rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700;
+}
+```
+
+### **`index.html`**
+
+```html
+<button
+  class="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700"
+>
+  Click me!
+</button>
+<button class="btn btn-green">Click me!</button>
+```
+
+And both scenarios will render the same css content
