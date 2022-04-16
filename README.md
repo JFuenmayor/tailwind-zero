@@ -159,10 +159,39 @@ When creating a responsive design, due to the presets that tailwindcss brings, i
 
 In the above use case, only from (preset) sm min-width and after (md, lg, etc.) will be applied the `text-center` class, however elements before that (630px) will be styless.
 
-This behavour is set on purpose due to the _atomic design_. Thus, the ideal use is the following
+This behavour is set on purpose due to the _atomic design_. Thus, the ideal use is the following:
 
 ### **`index.html`**
 
 ```html
 <div class="text-center sm:text-left">Text!</div>
+```
+
+## Pseudo Selectors
+
+Just like in traditional css, tailwindcss can make use of pseudo selectors such as `hover` `active` `focus` and so on.
+
+### **`index.html`**
+
+```html
+<div class="hover:text-white">Text!</div>
+```
+
+Also, tailwind enhance the api by providing group behavour such as `group-hover:...` and so on:
+
+### **`index.html`**
+
+```html
+<div class="group">
+  <div class="group-hover:text-white">Child!</div>
+  <svg class="group-hover:stroke-white" ...></svg>
+</div>
+```
+
+In case you wish to add responsiveness conditional, the pseudo classes and elements can be combined with breakpoints calls following the pattern `[breakpoint]:[pseudo-selector]:[style]`:
+
+### **`index.html`**
+
+```html
+<div class="sm:hover:text-white">Text!</div>
 ```
